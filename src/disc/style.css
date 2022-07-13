@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input {
+  background: none;
+  border: none;
+}
+
+.header-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  background-image: url("../images/bg-desktop-dark.jpg");
+  background-position: 17% 10%;
+}
+@media only screen and (max-width: 37.5em) {
+  .header-bg {
+    height: 250px;
+  }
+}
+@media only screen and (max-width: 23.4375em) {
+  .header-bg {
+    height: 200px;
+    background-image: url("../images/bg-mobile-dark.jpg");
+    background-position: 0;
+  }
+}
+
+.header-bg-theme {
+  background-image: url("../images/bg-desktop-light.jpg");
+  background-position: center;
+}
+@media only screen and (max-width: 23.4375em) {
+  .header-bg-theme {
+    background-image: url("../images/bg-mobile-light.jpg");
+  }
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6rem;
+  background: none;
+}
+.todo-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(0deg, 0%, 98%);
+  letter-spacing: 10px;
+}
+.todo-header button {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+.todo-header button svg {
+  color: hsl(0deg, 0%, 98%);
+}
+.todo-header button svg path {
+  d: path("M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z");
+}
+
+.todo-header-theme svg path {
+  d: path("M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z") !important;
+}
+
+.todo-container {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 54rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .todo-container {
+    top: 50px;
+    width: 33rem;
+  }
+}
+
+.todo-input {
+  width: 100%;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 2.5rem;
+  background-color: hsl(235deg, 24%, 19%);
+  color: hsl(234deg, 39%, 85%);
+}
+.todo-input span {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 2rem;
+  border: 1px solid hsl(237deg, 14%, 26%);
+}
+.todo-input input {
+  flex: 1;
+  font-size: 1.6rem;
+  width: 100%;
+  color: currentColor;
+}
+.todo-input input:focus {
+  outline: none;
+}
+.todo-input input::placeholder {
+  color: hsl(234deg, 11%, 52%);
+}
+
+.todo-inpu-theme {
+  background-color: hsl(236deg, 33%, 92%);
+  color: hsl(235deg, 19%, 35%);
+}
+.todo-inpu-theme span {
+  border: 1px solid hsl(233deg, 11%, 84%);
+}
+.todo-inpu-theme input::placeholder {
+  color: hsl(236deg, 9%, 61%);
+}
+
+.todo-item {
+  width: 100%;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: hsl(235deg, 24%, 19%);
+  color: hsl(234deg, 39%, 85%);
+  border-bottom: 1px solid hsl(237deg, 14%, 26%);
+}
+.todo-item button {
+  width: 26px;
+  height: 26px;
+}
+.todo-item button:first-of-type {
+  position: relative;
+  border-radius: 50%;
+  background: hsl(237deg, 14%, 26%);
+  margin-right: 2rem;
+}
+.todo-item button:first-of-type::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 93%;
+  height: 93%;
+  border-radius: 50%;
+  background-color: hsl(235deg, 24%, 19%);
+}
+.todo-item button:first-of-type svg {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  color: hsl(234deg, 11%, 52%);
+}
+@media only screen and (min-width: 64em) {
+  .todo-item button:first-of-type:hover {
+    background: linear-gradient(to right, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+  }
+  .todo-item button:first-of-type:hover::before {
+    background-color: hsl(235deg, 24%, 19%);
+  }
+}
+.todo-item button:last-child {
+  margin-left: 2rem;
+}
+.todo-item button:last-child svg {
+  color: hsl(234deg, 11%, 52%);
+}
+.todo-item p {
+  font-size: 1.6rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.todo-item-theme {
+  background-color: hsl(236deg, 33%, 92%);
+  color: hsl(235deg, 19%, 35%);
+  border-bottom: 1px solid hsl(233deg, 11%, 84%);
+}
+.todo-item-theme button:first-of-type {
+  background: hsl(233deg, 11%, 84%);
+}
+.todo-item-theme button:first-of-type::before {
+  background-color: hsl(236deg, 33%, 92%);
+}
+@media only screen and (min-width: 64em) {
+  .todo-item-theme button:first-of-type:hover::before {
+    background-color: hsl(236deg, 33%, 92%);
+  }
+}
+.todo-item-theme:last-of-type svg {
+  color: hsl(236deg, 9%, 61%);
+}
+
+.check button:first-of-type {
+  background: linear-gradient(to right, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%)) !important;
+}
+.check button:first-of-type::before {
+  background: linear-gradient(to right, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%)) !important;
+}
+.check button:first-of-type svg {
+  visibility: visible;
+  color: hsl(0deg, 0%, 98%);
+}
+.check p {
+  text-decoration: line-through;
+  color: hsl(234deg, 11%, 52%);
+}
+
+.todo-list {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 5rem rgba(0, 0, 0, 0.2);
+}
+.todo-list ul {
+  max-height: 40.2rem;
+  overflow: scroll;
+}
+
+.todo-features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  background-color: hsl(235deg, 24%, 19%);
+  color: hsl(234deg, 11%, 52%);
+  font-size: 1.6rem;
+}
+.todo-features div {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+@media only screen and (max-width: 37.5em) {
+  .todo-features div {
+    background-color: hsl(235deg, 24%, 19%);
+    box-shadow: 0 0 5rem rgba(0, 0, 0, 0.2);
+    padding: 2rem 2.5rem;
+    border-radius: 5px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(150%);
+  }
+}
+.todo-features button {
+  color: currentColor;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+@media only screen and (min-width: 64em) {
+  .todo-features button:hover {
+    color: hsl(234deg, 39%, 85%);
+  }
+}
+
+.todo-features-theme {
+  background-color: hsl(236deg, 33%, 92%);
+  color: hsl(236deg, 9%, 61%);
+}
+@media only screen and (max-width: 37.5em) {
+  .todo-features-theme div {
+    background-color: hsl(236deg, 33%, 92%);
+  }
+}
+@media only screen and (min-width: 64em) {
+  .todo-features-theme button:hover {
+    color: hsl(235deg, 24%, 19%);
+  }
+}
+
+.active {
+  color: hsl(220deg, 98%, 61%) !important;
+}
+
+/*# sourceMappingURL=style.css.map */

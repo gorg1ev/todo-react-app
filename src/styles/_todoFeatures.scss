@@ -1,0 +1,64 @@
+.todo-features {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: $padding-y $padding-x;
+   background-color: $very-dark-desaturated-blue;
+   color: $dark-grayish-blue-2;
+   font-size: 1.6rem;
+
+   div {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      position: relative;
+
+      @media only screen and (max-width: 37.5em) {
+         background-color: $very-dark-desaturated-blue;
+         box-shadow: 0 0 5rem rgba(0, 0, 0, 0.2);
+         padding: $padding-y $padding-x;
+         border-radius: $b-radius;
+         width: 100%;
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         transform: translateY(150%);
+      }
+   }
+
+   button {
+      color: currentColor;
+      font-size: 1.6rem;
+
+      cursor: pointer;
+
+      @media only screen and (min-width: 64em) {
+         &:hover {
+            color: $light-grayish-blue-2;
+         }
+      }
+   }
+}
+
+.todo-features-theme {
+   background-color: $very-light-grayish-blue;
+   color: $dark-grayish-blue-1;
+
+   div {
+      @media only screen and (max-width: 37.5em) {
+         background-color: $very-light-grayish-blue;
+      }
+   }
+
+   @media only screen and (min-width: 64em) {
+      button {
+         &:hover {
+            color: $very-dark-desaturated-blue;
+         }
+      }
+   }
+}
+
+.active {
+   color: $bright-blue !important;
+}

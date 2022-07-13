@@ -1,0 +1,47 @@
+.todo-input {
+   width: 100%;
+   padding: $padding-y $padding-x;
+   display: flex;
+   align-items: center;
+   border-radius: $b-radius;
+   margin-bottom: $margin-bt-sm;
+   background-color: $very-dark-desaturated-blue;
+   color: $light-grayish-blue-2;
+
+   span {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin-right: 2rem;
+      border: 1px solid $very-dark-grayish-blue-3;
+   }
+
+   input {
+      flex: 1;
+      font-size: 1.6rem;
+      width: 100%;
+      color: currentColor;
+
+      &:focus {
+         outline: none;
+      }
+
+      &::placeholder {
+         color: $dark-grayish-blue-2;
+      }
+   }
+}
+
+// $very-dark-blue
+.todo-inpu-theme {
+   background-color: $very-light-grayish-blue;
+   color: $very-dark-grayish-blue-1;
+
+   span {
+      border: 1px solid $light-grayish-blue-1;
+   }
+
+   input::placeholder {
+      color: $dark-grayish-blue-1;
+   }
+}

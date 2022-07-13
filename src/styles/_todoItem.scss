@@ -1,0 +1,133 @@
+.todo-item {
+   width: 100%;
+   padding: $padding-y $padding-x;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   background-color: $very-dark-desaturated-blue;
+   color: $light-grayish-blue-2;
+   border-bottom: 1px solid $very-dark-grayish-blue-3;
+
+   button {
+      width: 26px;
+      height: 26px;
+
+      &:first-of-type {
+         position: relative;
+         border-radius: 50%;
+         background: $very-dark-grayish-blue-3;
+         margin-right: 2rem;
+
+         &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 93%;
+            height: 93%;
+            border-radius: 50%;
+            background-color: $very-dark-desaturated-blue;
+         }
+
+         svg {
+            visibility: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            color: $dark-grayish-blue-2;
+         }
+
+         @media only screen and (min-width: 64em) {
+            &:hover {
+               background: linear-gradient(
+                  to right,
+                  $check-background-1,
+                  $check-background-2
+               );
+
+               &::before {
+                  background-color: $very-dark-desaturated-blue;
+               }
+            }
+         }
+      }
+
+      &:last-child {
+         margin-left: 2rem;
+
+         svg {
+            color: $dark-grayish-blue-2;
+         }
+      }
+   }
+
+   p {
+      font-size: 1.6rem;
+      flex: 1;
+      overflow: hidden;
+   }
+}
+
+.todo-item-theme {
+   background-color: $very-light-grayish-blue;
+   color: $very-dark-grayish-blue-1;
+   border-bottom: 1px solid $light-grayish-blue-1;
+
+   button {
+      &:first-of-type {
+         background: $light-grayish-blue-1;
+
+         &::before {
+            background-color: $very-light-grayish-blue;
+         }
+
+         @media only screen and (min-width: 64em) {
+            &:hover {
+               &::before {
+                  background-color: $very-light-grayish-blue;
+               }
+            }
+         }
+      }
+   }
+
+   &:last-of-type {
+      svg {
+         color: $dark-grayish-blue-1;
+      }
+   }
+}
+
+.check {
+   button {
+      &:first-of-type {
+         background: linear-gradient(
+            to right,
+            $check-background-1,
+            $check-background-2
+         ) !important;
+
+         &::before {
+            background: linear-gradient(
+               to right,
+               $check-background-1,
+               $check-background-2
+            ) !important;
+         }
+
+         svg {
+            visibility: visible;
+            color: $very-light-gray;
+         }
+      }
+   }
+
+   p {
+      text-decoration: line-through;
+      color: $dark-grayish-blue-2;
+   }
+}

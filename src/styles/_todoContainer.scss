@@ -1,0 +1,12 @@
+.todo-container {
+   position: absolute;
+   top: 80px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 54rem;
+
+   @media only screen and (max-width: 37.5em) {
+      top: 50px;
+      width: 33rem;
+   }
+}

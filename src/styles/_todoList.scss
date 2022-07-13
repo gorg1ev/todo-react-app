@@ -1,0 +1,10 @@
+.todo-list {
+   border-radius: $b-radius;
+   overflow: hidden;
+   box-shadow: 0 0 5rem rgba(0, 0, 0, 0.2);
+
+   ul {
+      max-height: 40.2rem;
+      overflow: scroll;
+   }
+}

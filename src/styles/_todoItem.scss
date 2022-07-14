@@ -3,7 +3,6 @@
    padding: $padding-y $padding-x;
    display: flex;
    align-items: center;
-   cursor: pointer;
    background-color: $very-dark-desaturated-blue;
    color: $light-grayish-blue-2;
    border-bottom: 1px solid $very-dark-grayish-blue-3;
@@ -17,6 +16,7 @@
          border-radius: 50%;
          background: $very-dark-grayish-blue-3;
          margin-right: 2rem;
+         cursor: pointer;
 
          &::before {
             content: '';

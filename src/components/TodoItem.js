@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
+
 import { Theme } from '../App';
 
-function TodoItem({ todo, todos, setTodos }) {
+function TodoItem(props) {
+   const { todo, todos, setTodos, provided, innerRef } = props;
    const theme = useContext(Theme);
 
    const onCompleteHandler = (e) => {
@@ -18,6 +20,9 @@ function TodoItem({ todo, todos, setTodos }) {
          className={`todo-item ${theme.theme ? 'todo-item-theme' : ''} ${
             todo.completed ? 'check' : ''
          }`}
+         {...provided.dragHandleProps}
+         {...provided.draggableProps}
+         ref={innerRef}
       >
          <button onClick={onCompleteHandler}>
             <svg

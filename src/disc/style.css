@@ -94,8 +94,7 @@ input {
 .todo-container {
   position: absolute;
   top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 27rem);
   width: 54rem;
 }
 @media only screen and (max-width: 37.5em) {
@@ -103,6 +102,14 @@ input {
     top: 50px;
     width: 33rem;
   }
+}
+
+.drag-n-drop {
+  font-size: 1rem;
+  color: hsl(233deg, 14%, 35%);
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .todo-input {
@@ -151,7 +158,6 @@ input {
   padding: 2rem 2.5rem;
   display: flex;
   align-items: center;
-  cursor: pointer;
   background-color: hsl(235deg, 24%, 19%);
   color: hsl(234deg, 39%, 85%);
   border-bottom: 1px solid hsl(237deg, 14%, 26%);
@@ -165,6 +171,7 @@ input {
   border-radius: 50%;
   background: hsl(237deg, 14%, 26%);
   margin-right: 2rem;
+  cursor: pointer;
 }
 .todo-item button:first-of-type::before {
   content: "";

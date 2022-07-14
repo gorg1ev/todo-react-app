@@ -32,6 +32,7 @@ function TodoContainer() {
             saveLocalTodos={saveLocalTodos}
          />
          {todos.length !== 0 && <TodoList todos={todos} setTodos={setTodos} />}
+         <p className="drag-n-drop">Drag and drop to reorder list</p>
       </main>
    );
 }

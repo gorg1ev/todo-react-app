@@ -42,4 +42,4 @@ function TodoFeatures({ setFilter, todos, setTodos }) {
    );
 }
 
-export default TodoFeatures;
+export default React.memo(TodoFeatures);

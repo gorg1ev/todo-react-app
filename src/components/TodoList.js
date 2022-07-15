@@ -2,30 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import TodoItem from './TodoItem';
-import TodoFeatures from './TodoFeatures';
 
-function TodoList({ todos, setTodos }) {
-   const [filteredTodos, setFilteredTodos] = useState([]);
-   const [filter, setFilter] = useState('all');
-
-   const filterHandler = () => {
-      switch (filter) {
-         case 'completed':
-            setFilteredTodos(todos.filter((todo) => todo.completed));
-            break;
-         case 'active':
-            setFilteredTodos(todos.filter((todo) => !todo.completed));
-            break;
-         default:
-            setFilteredTodos(todos);
-            break;
-      }
-   };
-
-   useEffect(() => {
-      filterHandler();
-   }, [filter, todos]);
-
+function TodoList({ todos, setTodos, filteredTodos }) {
    const handlerOnDragEnd = (e) => {
       if (!e.destination) return;
 
@@ -66,11 +44,6 @@ function TodoList({ todos, setTodos }) {
                )}
             </Droppable>
          </DragDropContext>
-         <TodoFeatures
-            setFilter={setFilter}
-            todos={todos}
-            setTodos={setTodos}
-         />
       </div>
    );
 }
